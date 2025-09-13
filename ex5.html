@@ -15,17 +15,36 @@
         }
 
         /* Add CSS code here */ 
+        #square { 
+            width: 150px;
+            height: 150px;
+            background-color: goldenrod;
+            text-align: center;
+            padding-top: 60px;
+        }
 
     </style>
 </head>
 <body>
         
-        <div id="circle" onmouseover="mOver(this)" onmouseout="mOut(this)" >
+        <div id="circle" onmouseover="mOver(this)" onmouseout="mOut(this)" > <!-- This is a HTML event listener (embedded into HTML)-->
+
             Mouse Over Me
         </div>
         
         <script>
+            
            // add code here
+           circle = document.getElementById("circle");
+           function mOver(circle){
+                circle.id = "square"; 
+           }
+
+           square = document.getElementById("square");
+           function mOut(square){
+                square.id = "circle"; 
+           }
+           
         </script>
                 
 </body>
