@@ -13,6 +13,7 @@
         <option value="Candles">Candles</option>
     </select>
 
+
     <p>Shopping Cart:</p>
     <ul id="shopList"></ul>
 
@@ -20,7 +21,19 @@
         
         // add code here
         
+        var selection = document.getElementById("select_item")
         
+        selection.addEventListener("change", function(){
+            ulElm = document.getElementById("shopList");
+            liElm = document.createElement("li");
+            var itemSelected = document.getElementById("select_item").value;
+
+            liElm.textContent = itemSelected;
+            ulElm.appendChild(liElm);
+                })
+
+
+            
     </script>
 
     

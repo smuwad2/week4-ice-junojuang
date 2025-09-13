@@ -1,0 +1,20 @@
+//Add list of items under div
+const divElem = document.getElementById("container");
+while (divElem.firstChild) {
+  divElem.firstChild.remove();
+}
+
+<ul>
+  <li>Apples</li>
+  <li>Oranges</li>
+  <li>Pears</li>
+</ul>
+
+const fruits = ['Apples', 'Oranges', 'Pears'];
+let ulElem = document.createElement("ul");
+for (fruit of fruits) {
+  const liElem = document.createElement("li");
+  liElem.innerText = fruit;
+  ulElem.appendChild(liElem);
+}
+divElem.appendChild(ulElem);
