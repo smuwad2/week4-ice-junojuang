@@ -1,20 +1,51 @@
-//Add list of items under div
-const divElem = document.getElementById("container");
-while (divElem.firstChild) {
-  divElem.firstChild.remove();
-}
+<html>
+   <head>
+      <title>Event Handling</title>
+   </head>
+   <body>
+     
+      <h1>Shopping List</h1>
+      <p>Get it done today</p>
+      <br>
+        <!-- add HTML code here -->
+      <input type="text" id="itemInput" placeholder="New Item">
+      <button id="addItem">Add</button>
+         
 
-<ul>
-  <li>Apples</li>
-  <li>Oranges</li>
-  <li>Pears</li>
-</ul>
 
-const fruits = ['Apples', 'Oranges', 'Pears'];
-let ulElem = document.createElement("ul");
-for (fruit of fruits) {
-  const liElem = document.createElement("li");
-  liElem.innerText = fruit;
-  ulElem.appendChild(liElem);
-}
-divElem.appendChild(ulElem);
+      <ul>
+         <li>Notebook</li>
+         <li>Jello</li>
+         <li>Spinach</li>
+         <li>Rice</li>
+         <li>Birthday Cake</li>
+         <li>Candles</li>
+      </ul>
+      
+      <script>
+      
+        // add code here
+         document.getElementById("addItem").onclick = function() {
+               const ulElm = document.getElementsByTagName("ul")[0];
+               const liElm = document.createElement("li");
+               const newItem = document.getElementById("itemInput");
+               liElm.textContent = newItem.value;
+               ulElm.appendChild(liElm);
+
+         };
+         const liElements = document.getElementsByTagName("li");
+         for(i=0;i<liElements.length;i++){
+            const delButton = document.createElement("button");
+            delButton.textContent = "Delete";
+            liElements[i].appendChild(delButton);
+
+            delButton.addEventListener("click",function(){
+               this.parentElement.remove();
+            })
+         }
+
+
+      </script>
+ 
+   </body>
+</html>
