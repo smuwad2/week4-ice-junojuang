@@ -9,11 +9,9 @@
             background-color: goldenrod;
         }
 
-
-        
         /* add CSS code here */
 
-
+        
     </style>
 
     
@@ -27,22 +25,18 @@
     <button onclick="changeShape()">Make a change!</button>
 
     <script>
-        let square = true;
-    
+        var square=true;
        // add code here
-       function changeShape(){
-        const divElm = document.getElementById("div1");
-
-        if (square){
-            divElm.style.borderRadius= "50%"
-        }else {
-            divElm.style.borderRadius = "0px"
+        function changeShape() {
+            if (square) {
+                //console.log(square)
+                document.getElementById("div1").style.borderRadius = "50%";
+            }
+            else {
+                document.getElementById("div1").style.borderRadius = "0px";
+            }
+            square = !square;
         }
-
-        square =!square;
-        
-    }
-
     </script>
 
 </body>

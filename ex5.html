@@ -15,36 +15,23 @@
         }
 
         /* Add CSS code here */ 
-        #square { 
-            width: 150px;
-            height: 150px;
-            background-color: goldenrod;
-            text-align: center;
-            padding-top: 60px;
-        }
 
     </style>
 </head>
 <body>
         
-        <div id="circle" onmouseover="mOver(this)" onmouseout="mOut(this)" > <!-- This is a HTML event listener (embedded into HTML)-->
-
+        <div id="circle" onmouseover="mOver(this)" onmouseout="mOut(this)" >
             Mouse Over Me
         </div>
         
         <script>
-            
            // add code here
-           circle = document.getElementById("circle");
-           function mOver(circle){
-                circle.id = "square"; 
+           function mOver(circle) {
+            circle.style.borderRadius = "0%";
            }
-
-           square = document.getElementById("square");
-           function mOut(square){
-                square.id = "circle"; 
+           function mOut(circle) {
+            circle.style.borderRadius = "50%";
            }
-           
         </script>
                 
 </body>

@@ -13,27 +13,21 @@
         <option value="Candles">Candles</option>
     </select>
 
-
     <p>Shopping Cart:</p>
     <ul id="shopList"></ul>
 
     <script>
         
         // add code here
-        
-        var selection = document.getElementById("select_item")
-        
-        selection.addEventListener("change", function(){
-            ulElm = document.getElementById("shopList");
-            liElm = document.createElement("li");
-            var itemSelected = document.getElementById("select_item").value;
+        const selectItem = document.getElementById('select_item');
+        const shopList = document.getElementById('shopList');
 
-            liElm.textContent = itemSelected;
-            ulElm.appendChild(liElm);
-                })
-
-
-            
+        selectItem.addEventListener('change', function() {
+            const selectedItem = selectItem.value;
+            const liItem = document.createElement("li");
+            liItem.innerText = selectedItem;
+            shopList.appendChild(liItem);
+        })
     </script>
 
     
